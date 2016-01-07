@@ -1,0 +1,34 @@
+//Fetching Ajax data
+
+import ajax from 'superagent';
+
+//Melhor lugar para fazer as requisições é antes do
+//Componente ser renderizado, logo faremos nossa chamada no método
+//componentWillMount()
+
+componentWillMount(){
+
+
+ajax
+.get("site")
+.end((error,response) => 
+{
+	 if (!error && response){
+	     this.setState({ dados: response.body});
+	 }
+	 else{
+	     // Surgiu um erro!
+	 }
+});
+
+//O que esse código faz é:
+//→ Requisitando o dado fornecido na URL passada no .get();
+//→ Após requisição ser concluída ele chama então o .end, que irá receber uma função callback para tratar a resposta
+//→ Caso tenha retornado algum dado, então salvamos no state, através de this.setState({key: response})
+
+
+//× As chamadas do superagent são assíncronas;
+//× Converte JSON em JS Object automaticamente;
+
+××××××××××××××××××××××××××××××××
+
