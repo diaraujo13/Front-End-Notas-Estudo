@@ -5,7 +5,7 @@
 <a> {2+2} </a>
 new Date()
 
-
+// × Statement é utilizado para modificar o conteúdo das variáveis!
 // × Statement: produz uma ação. Loops e condicionais são exemplos de statement. 
 // Ele significa algum comportamento ou produz algo e tem seus efeitos colaterais
 // Exemplos:
