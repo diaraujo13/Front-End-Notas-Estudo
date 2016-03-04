@@ -10,7 +10,10 @@
 // do curl ou um cliente REST como o <POSTMAN>
 
 // 2. SYNC
-
+var localDB = new PouchDB("todos");
+var remoteDB = new PouchDB("http://serverip:5984/todos");
+ 
+localDB.sync(remoteDB, {live: true});
 // CouchDB foi projetado para permitir fácil sincronização entre
 // bancos de dados
 
